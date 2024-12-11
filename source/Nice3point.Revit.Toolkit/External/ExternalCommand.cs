@@ -73,24 +73,14 @@ public abstract class ExternalCommand : IExternalCommand
     {
         var currentType = GetType();
 
-#if NETCOREAPP
-        if (!AddinLoadContext.CheckAccess(currentType))
-        {
-            var dependenciesProvider = AddinLoadContext.GetDependenciesProvider(currentType);
-            var instance = dependenciesProvider.CreateInstance(currentType);
-            return AddinLoadContext.Invoke(instance, commandData, ref message, elements);
-        }
-#endif
-
         ElementSet = elements;
         ErrorMessage = message;
         ExternalCommandData = commandData;
 
         try
         {
-#if !NETCOREAPP
             ResolveHelper.BeginAssemblyResolve(currentType);
-#endif
+
             Execute();
         }
         catch
@@ -107,9 +97,9 @@ public abstract class ExternalCommand : IExternalCommand
         finally
         {
             message = ErrorMessage;
-#if !NETCOREAPP
+
             ResolveHelper.EndAssemblyResolve();
-#endif
+
             Context.RestoreFailures();
             Context.RestoreDialogs();
         }
