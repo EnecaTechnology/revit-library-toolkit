@@ -6,9 +6,9 @@ using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
-using Nice3point.Revit.Toolkit.Utils;
+using Eneca.Revit.Toolkit.Utils;
 
-namespace Nice3point.Revit.Toolkit;
+namespace Eneca.Revit.Toolkit;
 
 /// <summary>
 ///     Provides members for setting and retrieving data about Revit application context.

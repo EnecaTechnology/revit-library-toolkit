@@ -5,7 +5,7 @@ using System.Runtime.Loader;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI;
 
-namespace Nice3point.Revit.Toolkit.Helpers;
+namespace Eneca.Revit.Toolkit.Helpers;
 
 /// <summary>
 ///     Isolated addin dependency container.

@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using Autodesk.Revit.UI;
 #if (!NETCOREAPP)
-using Nice3point.Revit.Toolkit.Helpers;
+using Eneca.Revit.Toolkit.Helpers;
 #endif
 
-namespace Nice3point.Revit.Toolkit.Options;
+namespace Eneca.Revit.Toolkit.Options;
 
 /// <summary>
 ///     Class that the Revit UI will call, if present, to construct the FrameworkElement for the pane.

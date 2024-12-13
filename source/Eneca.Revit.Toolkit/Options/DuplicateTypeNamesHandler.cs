@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Nice3point.Revit.Toolkit.Options;
+namespace Eneca.Revit.Toolkit.Options;
 
 /// <summary>
 ///     A class for custom handlers of duplicate type names encountered during a paste operation. When the destination document

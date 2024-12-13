@@ -1,6 +1,6 @@
 ﻿using Autodesk.Revit.UI.Selection;
 
-namespace Nice3point.Revit.Toolkit.Options;
+namespace Eneca.Revit.Toolkit.Options;
 
 /// <summary>
 ///     Configuration for creating <see cref="ISelectionFilter" /> instances.

@@ -1,6 +1,6 @@
 ﻿using Autodesk.Revit.UI;
 
-namespace Nice3point.Revit.Toolkit.External;
+namespace Eneca.Revit.Toolkit.External;
 
 /// <summary>
 ///     External event used to change the document.

@@ -2,9 +2,9 @@
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
-using Nice3point.Revit.Toolkit.Helpers;
+using Eneca.Revit.Toolkit.Helpers;
 
-namespace Nice3point.Revit.Toolkit.External;
+namespace Eneca.Revit.Toolkit.External;
 
 /// <summary>
 ///     Implementation for a Revit <see cref="Autodesk.Revit.UI.IExternalCommand"/>.

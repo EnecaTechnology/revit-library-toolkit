@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.Loader;
 #endif
 
-namespace Nice3point.Revit.Toolkit.Helpers;
+namespace Eneca.Revit.Toolkit.Helpers;
 
 /// <summary>
 ///     Provides methods to resolve dependencies.
