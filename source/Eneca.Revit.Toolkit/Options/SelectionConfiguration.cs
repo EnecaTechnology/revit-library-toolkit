@@ -1,7 +1,4 @@
-﻿using System;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.UI.Selection;
-using JetBrains.Annotations;
+﻿using Autodesk.Revit.UI.Selection;
 
 namespace Eneca.Revit.Toolkit.Options;
 

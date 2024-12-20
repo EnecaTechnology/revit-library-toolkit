@@ -1,7 +1,4 @@
-﻿using Autodesk.Revit.DB;
-using Autodesk.Revit.UI;
-using Eneca.Revit.Toolkit.Helpers;
-using JetBrains.Annotations;
+﻿using Autodesk.Revit.UI;
 #if NETCOREAPP
 #endif
 

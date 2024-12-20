@@ -1,5 +1,4 @@
 ﻿using Autodesk.Revit.UI;
-using JetBrains.Annotations;
 
 namespace Eneca.Revit.Toolkit.External;
 

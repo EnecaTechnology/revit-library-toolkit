@@ -1,6 +1,4 @@
-﻿using Autodesk.Revit.DB;
-
-namespace Eneca.Revit.Toolkit.Utils;
+﻿namespace Eneca.Revit.Toolkit.Utils;
 
 /// <summary>
 ///     Provides utils for processing failures.

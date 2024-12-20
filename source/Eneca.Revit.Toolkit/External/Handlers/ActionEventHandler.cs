@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Autodesk.Revit.UI;
-using JetBrains.Annotations;
 
 namespace Eneca.Revit.Toolkit.External.Handlers;
 

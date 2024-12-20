@@ -1,16 +1,12 @@
 ﻿#if NETCOREAPP
 using System.Diagnostics.CodeAnalysis;
 #endif
-using System;
-using System.Linq;
 using System.Reflection;
 using Autodesk.Revit.ApplicationServices;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
 using Eneca.Revit.Toolkit.Utils;
-using JetBrains.Annotations;
 
 namespace Eneca.Revit.Toolkit;
 

@@ -1,6 +1,4 @@
-﻿using System;
-using Autodesk.Revit.UI;
-using JetBrains.Annotations;
+﻿using Autodesk.Revit.UI;
 
 namespace Eneca.Revit.Toolkit.Decorators;
 
