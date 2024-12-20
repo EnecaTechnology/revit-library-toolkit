@@ -1,5 +1,6 @@
 ﻿using Autodesk.Revit.UI;
 #if NETCOREAPP
+using Eneca.Revit.Toolkit.Helpers;
 #endif
 
 namespace Eneca.Revit.Toolkit.External;
