@@ -79,7 +79,7 @@
 
 	<PropertyGroup>
 		<ProjectName>Eneca.Revit.Toolkit</ProjectName>
-		<AssemblyVersion>1.0.1.0</AssemblyVersion>
+		<AssemblyVersion>1.0.2.0</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<AssemblyName>$(ProjectName)_$(AssemblyVersion)</AssemblyName>
 	</PropertyGroup>
