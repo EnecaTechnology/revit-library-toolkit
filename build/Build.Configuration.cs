@@ -1,24 +1,43 @@
-﻿sealed partial class Build
+﻿using Nuke.Common;
+using Nuke.Common.IO;
+using Nuke.Common.ProjectModel;
+using Serilog;
+
+// ReSharper disable InconsistentNaming
+
+namespace Build;
+
+internal partial class Build
 {
-    string PublishVersion => Version ??= VersionMap.Values.Last();
-    readonly AbsolutePath ArtifactsDirectory = RootDirectory / "output";
-    readonly AbsolutePath ChangeLogPath = RootDirectory / "Changelog.md";
+	private readonly AbsolutePath ArtifactsDirectory = RootDirectory / "output" / "nuget";
+	[Parameter] private readonly bool ForceNexus;
+	[Parameter] [Secret] private readonly string NexusCredentials;
+	[Parameter] [Secret] private readonly string NexusNugetCredentials;
+	[Parameter] private readonly string NexusNugetUrl;
+	[Parameter] private readonly string NexusUrl;
+	[Parameter] private readonly string ReleaseTag;
 
-    protected override void OnBuildInitialized()
-    {
-        Configurations =
-        [
-            "Release*"
-        ];
+	[Parameter] private readonly bool SkipTagCheck;
+	[Parameter] [Secret] private readonly string Token;
 
-        VersionMap = new()
-        {
-            { "Release R20", "2020.2.3" },
-            { "Release R21", "2021.2.3" },
-            { "Release R22", "2022.2.3" },
-            { "Release R23", "2023.2.3" },
-            { "Release R24", "2024.1.3" },
-            { "Release R25", "2025.0.3" }
-        };
-    }
+	private string[] Configurations { get; } =
+	{
+		"Release R21",
+		"Release R22",
+		"Release R23",
+		"Release R24",
+		"Release R25",
+	};
+
+
+	[Solution(GenerateProjects = true)] private Solution Solution { get; set; }
+
+	private string ProjectName => Solution.Eneca_Revit_Toolkit.Name;
+	private string ProjectDirectory => Solution.Eneca_Revit_Toolkit.Directory;
+
+	protected override void OnBuildInitialized()
+	{
+		Log.Information("ArtifactsDirectory: {ArtifactsDirectory}", ArtifactsDirectory);
+		Log.Information("Artifact directory: {RootDirectory}", RootDirectory);
+	}
 }

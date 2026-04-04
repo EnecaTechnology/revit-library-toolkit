@@ -1,21 +1,28 @@
-﻿sealed partial class Build
+﻿using Nuke.Common;
+using Nuke.Common.IO;
+using Serilog;
+
+namespace Build;
+
+internal partial class Build
 {
-    Target Clean => _ => _
-        .OnlyWhenStatic(() => IsLocalBuild)
-        .Executes(() =>
-        {
-            CleanDirectory(ArtifactsDirectory);
+	private Target Clean => d => d
+		.OnlyWhenStatic(() => IsLocalBuild)
+		.WhenSkipped(DependencyBehavior.Execute)
+		.Executes(() =>
+		{
+			CleanDirectory(ArtifactsDirectory);
+			foreach (var project in Solution.AllProjects.Where(p => p.Name != "Build").ToList())
+			{
+				CleanDirectory(project.Directory / "bin");
+				CleanDirectory(project.Directory / "obj");
+			}
+		})
+		.Triggers(Compile);
 
-            foreach (var project in Solution.AllProjects.Where(project => project != Solution.Build))
-            {
-                CleanDirectory(project.Directory / "bin");
-                CleanDirectory(project.Directory / "obj");
-            }
-        });
-
-    static void CleanDirectory(AbsolutePath path)
-    {
-        Log.Information("Cleaning directory: {Directory}", path);
-        path.CreateOrCleanDirectory();
-    }
+	private static void CleanDirectory(AbsolutePath path)
+	{
+		Log.Information("Cleaning directory: {Directory}", path);
+		path.CreateOrCleanDirectory();
+	}
 }

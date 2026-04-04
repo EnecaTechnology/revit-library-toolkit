@@ -13,20 +13,6 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageType>Dependency</PackageType>
-        <PackageId>Eneca.Revit.Toolkit</PackageId>
-        <Authors>Nice3point</Authors>
-        <Description>Toolkit for Revit plugin development</Description>
-        <PackageTags>revit;toolkit</PackageTags>
-        <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/Nice3point/RevitToolkit</RepositoryUrl>
-        <PackageProjectUrl>https://github.com/Nice3point/RevitToolkit</PackageProjectUrl>
-        <PackageIcon>images\PackageIcon.png</PackageIcon>
-        <PackageLicenseFile>License.md</PackageLicenseFile>
-        <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    </PropertyGroup>
-
-    <PropertyGroup>
         <Optimize>true</Optimize>
         <IsPackable>true</IsPackable>
         <IncludeSymbols>true</IncludeSymbols>
@@ -74,16 +60,23 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\..\.nuget\PackageIcon.png" Link="NuGet\PackageIcon.png" PackagePath="images\" Pack="true" />
-        <None Include="..\..\License.md" Link="NuGet\License.md" PackagePath="" Pack="true" />
-        <None Include="..\..\Readme.md" Link="NuGet\Readme.md" PackagePath="" Pack="true" />
+        <None Include="..\..\.nuget\nuget-icon.png" PackagePath="" Pack="true" />
     </ItemGroup>
 
 	<PropertyGroup>
 		<ProjectName>Eneca.Revit.Toolkit</ProjectName>
-		<AssemblyVersion>1.0.4.0</AssemblyVersion>
+		<AssemblyVersion>1.0.5.0</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<AssemblyName>$(ProjectName)_$(AssemblyVersion)</AssemblyName>
 	</PropertyGroup>
-	
+
+    <PropertyGroup>
+        <PackageType>Dependency</PackageType>
+        <PackageId>Eneca.Revit.Toolkit</PackageId>
+        <Authors>Nice3point</Authors>
+        <Description>Toolkit for Revit plugin development</Description>
+        <RepositoryUrl>https://github.com/EnecaTechnology/revit-library-toolkit</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/EnecaTechnology/revit-library-toolkit</PackageProjectUrl>
+        <PackageIcon>nuget-icon.png</PackageIcon>
+    </PropertyGroup>
 </Project>

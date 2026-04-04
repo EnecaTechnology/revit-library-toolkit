@@ -1,0 +1,32 @@
+name: Pushing Nuget package
+run-name: Pushing ${{ github.ref_name }} nuget version to Nexus Nuget storage 🚀
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+      - '*.*.*.*'
+
+  workflow_dispatch:
+
+jobs:
+  push_nuget_to_nexus:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 1
+          
+      - name: Handle other work to nuke
+        shell: cmd
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          TOKEN: ${{ secrets.TOKEN }}
+          NEXUS_CREDENTIALS: ${{ secrets.NEXUS_CREDENTIALS }}
+          NEXUS_NUGET_CREDENTIALS: ${{ secrets.NEXUS_NUGET_CREDENTIALS }}
+          NEXUS_URL: ${{ vars.NEXUS_URL }}
+          NEXUS_NUGET_URL: ${{ vars.NEXUS_NUGET_URL }}
+        run: |
+          cd revit-library-toolkit
+          .\.nuke\build.cmd
