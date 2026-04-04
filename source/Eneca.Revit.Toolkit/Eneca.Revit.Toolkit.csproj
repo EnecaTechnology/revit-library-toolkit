@@ -12,14 +12,6 @@
 		<Configurations>$(Configurations);Release R21;Release R22;Release R23;Release R24;Release R25</Configurations>
     </PropertyGroup>
 
-    <PropertyGroup>
-        <Optimize>true</Optimize>
-        <IsPackable>true</IsPackable>
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    </PropertyGroup>
-
 	<PropertyGroup Condition="$(Configuration.Contains('R21'))">
 		<TargetFramework>net48</TargetFramework>
 		<RevitVersion>2021</RevitVersion>
@@ -78,5 +70,8 @@
         <RepositoryUrl>https://github.com/EnecaTechnology/revit-library-toolkit</RepositoryUrl>
         <PackageProjectUrl>https://github.com/EnecaTechnology/revit-library-toolkit</PackageProjectUrl>
         <PackageIcon>nuget-icon.png</PackageIcon>
+        <Optimize>true</Optimize>
+        <IsPackable>true</IsPackable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 </Project>

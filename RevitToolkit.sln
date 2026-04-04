@@ -59,6 +59,5 @@ Global
 		{5489715D-8ECD-4CA8-8B61-C8B387E9A7DF}.Release R23|Any CPU.ActiveCfg = Debug|Any CPU
 		{5489715D-8ECD-4CA8-8B61-C8B387E9A7DF}.Release R24|Any CPU.ActiveCfg = Debug|Any CPU
 		{5489715D-8ECD-4CA8-8B61-C8B387E9A7DF}.Release R25|Any CPU.ActiveCfg = Debug|Any CPU
-		{5489715D-8ECD-4CA8-8B61-C8B387E9A7DF}.Debug R21|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

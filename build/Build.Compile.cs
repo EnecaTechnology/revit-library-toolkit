@@ -37,10 +37,7 @@ internal partial class Build
 
 		Log.Information("Release tag: {Version}", tagVersion);
 
-		var assembly = Directory
-			.GetFiles(ProjectDirectory, "*.dll", SearchOption.AllDirectories)
-			.First(x => x.Contains($"{ProjectName}") && x.EndsWith(".dll"));
-		var productVersion = Assembly.LoadFile(assembly).GetName().Version;
+		var productVersion = GetAssemblyVersion();;
 			
 		Log.Information("Product Version: {Version}", tagVersion);
 			
@@ -49,5 +46,14 @@ internal partial class Build
 		var buildEquals = productVersion.Build == tagVersion.Build;
 		if (!(majorEquals && minorEquals && buildEquals))
 			throw new Exception("Tag and Product version should be the same");
+	}
+
+	private Version GetAssemblyVersion()
+	{
+		var assembly = Directory
+			.GetFiles(ProjectDirectory, "*.dll", SearchOption.AllDirectories)
+			.First(x => x.Contains($"{ProjectName}") && x.EndsWith(".dll"));
+		
+		 return Assembly.LoadFile(assembly).GetName().Version;
 	}
 }
