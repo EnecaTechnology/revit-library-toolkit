@@ -17,7 +17,7 @@ internal partial class Build
 
 				Log.Information("Crating package {Configuration} of {Solution} solution", configuration, Solution);
 
-				DotNetTasks.DotNetRestore(settings => settings
+				DotNetRestore(settings => settings
 					.SetProjectFile(Solution.Path)
 					.SetProperty("Configuration", configuration));
 				

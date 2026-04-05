@@ -27,8 +27,7 @@ internal partial class Build
 			if (!IsServerBuild) return;
 			
 			ValidateVersion();
-		})
-		.Triggers(Pack);
+		});
 
 	private void ValidateVersion()
 	{

@@ -69,6 +69,7 @@
         <Description>Toolkit for Revit plugin development</Description>
         <RepositoryUrl>https://github.com/EnecaTechnology/revit-library-toolkit</RepositoryUrl>
         <PackageProjectUrl>https://github.com/EnecaTechnology/revit-library-toolkit</PackageProjectUrl>
+        <PackageIconUrl>https://avatars.githubusercontent.com/u/80836038?s=400u=794f334df00d7882547bdb4969d6722526ba8204v=4</PackageIconUrl>
         <PackageIcon>nuget-icon.png</PackageIcon>
         <Optimize>true</Optimize>
         <IsPackable>true</IsPackable>
