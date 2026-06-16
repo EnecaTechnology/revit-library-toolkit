@@ -1,0 +1,34 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+trim_trailing_whitespace = true
+
+# Global C# rules
+[*.cs]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Tell standard Visual Studio / Roslyn to ignore var preferences
+csharp_style_var_for_built_in_types = false:none
+csharp_style_var_when_type_is_apparent = false:none
+csharp_style_var_elsewhere = false:none
+
+# Tell ReSharper to completely ignore var preferences during cleanup
+resharper_csharp_use_var_for_builtin_types_highlighting = none
+resharper_csharp_use_var_for_simple_types_highlighting = none
+resharper_csharp_use_var_elsewhere_highlighting = none
+
+# Max line length (set to 120 or your preferred length)
+max_line_length = 120
+
+# Line breaks in XML
+keep_existing_linebreaks = true
+xml_indent_size = 4
+xml_indent_style = tab
+resharper_xml_indent_size = 4
+resharper_xml_indent_style = tab
+resharper_csharp_keep_existing_linebreaks = true
+csharp_keep_existing_linebreaks = true
