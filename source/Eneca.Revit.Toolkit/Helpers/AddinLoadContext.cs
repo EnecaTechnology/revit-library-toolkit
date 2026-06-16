@@ -73,7 +73,8 @@ internal sealed class AddinLoadContext : AssemblyLoadContext
     public static Result Invoke(object instance, string methodName, UIControlledApplication application)
     {
         var instanceType = instance.GetType();
-        var method = instanceType.GetMethod(methodName, MethodSearchFlags, null, [typeof(UIControlledApplication)], null)!;
+        var method =
+ instanceType.GetMethod(methodName, MethodSearchFlags, null, [typeof(UIControlledApplication)], null)!;
         return (Result)method.Invoke(instance, [application])!;
     }
 
@@ -83,7 +84,8 @@ internal sealed class AddinLoadContext : AssemblyLoadContext
     public static ExternalDBApplicationResult Invoke(object instance, string methodName, ControlledApplication application)
     {
         var instanceType = instance.GetType();
-        var method = instanceType.GetMethod(methodName, MethodSearchFlags, null, [typeof(ControlledApplication)], null)!;
+        var method =
+ instanceType.GetMethod(methodName, MethodSearchFlags, null, [typeof(ControlledApplication)], null)!;
         return (ExternalDBApplicationResult)method.Invoke(instance, [application])!;
     }
 
@@ -131,7 +133,8 @@ internal sealed class AddinLoadContext : AssemblyLoadContext
             elements
         ];
 
-        var method = instanceType.GetMethod(nameof(IExternalCommand.Execute), MethodSearchFlags, null, methodParameterTypes, null)!;
+        var method =
+ instanceType.GetMethod(nameof(IExternalCommand.Execute), MethodSearchFlags, null, methodParameterTypes, null)!;
         var result = (Result)method.Invoke(command, methodParameters)!;
         message = (string)methodParameters[1];
         return result;

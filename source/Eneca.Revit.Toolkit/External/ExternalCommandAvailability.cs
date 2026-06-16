@@ -6,7 +6,8 @@ using Eneca.Revit.Toolkit.Helpers;
 namespace Eneca.Revit.Toolkit.External;
 
 /// <summary>
-///     Provide the <see cref="Autodesk.Revit.UI.IExternalCommandAvailability"/> implementation for an accessibility check for a Revit add-in External Command.
+///     Provide the <see cref="Autodesk.Revit.UI.IExternalCommandAvailability" /> implementation for an accessibility check
+///     for a Revit add-in External Command.
 /// </summary>
 [PublicAPI]
 public abstract class ExternalCommandAvailability : IExternalCommandAvailability
@@ -15,21 +16,25 @@ public abstract class ExternalCommandAvailability : IExternalCommandAvailability
     private object? _isolatedInstance;
 #endif
 
-    /// <summary> Implement this method to provide control over whether your external command is enabled or disabled.</summary>
-    /// <returns> Indicates whether Revit should enable or disable the corresponding external command.</returns>
-    /// <remarks>
-    /// This callback will be called by Revit's user interface any time there is a contextual change.
-    /// Therefore, the callback must be fast and is not permitted to modify the active document and be blocking in any way.
-    /// </remarks>
-    /// <param name="applicationData"> An ApplicationServices.Application object which contains reference to Application
-    /// needed by external command. </param>
-    /// <param name="selectedCategories"> An list of categories of the elements which have been selected in Revit in the active document,
-    /// or an empty set if no elements are selected or there is no active document. </param>
-    public abstract bool SetCommandAvailability(UIApplication applicationData, CategorySet selectedCategories);
+	/// <summary> Implement this method to provide control over whether your external command is enabled or disabled.</summary>
+	/// <returns> Indicates whether Revit should enable or disable the corresponding external command.</returns>
+	/// <remarks>
+	///     This callback will be called by Revit's user interface any time there is a contextual change.
+	///     Therefore, the callback must be fast and is not permitted to modify the active document and be blocking in any way.
+	/// </remarks>
+	/// <param name="applicationData">
+	///     An ApplicationServices.Application object which contains reference to Application
+	///     needed by external command.
+	/// </param>
+	/// <param name="selectedCategories">
+	///     An list of categories of the elements which have been selected in Revit in the active document,
+	///     or an empty set if no elements are selected or there is no active document.
+	/// </param>
+	public abstract bool SetCommandAvailability(UIApplication applicationData, CategorySet selectedCategories);
 
-    /// <summary>Callback invoked by Revit. Not used to be called in user code.</summary>
-    public bool IsCommandAvailable(UIApplication applicationData, CategorySet selectedCategories)
-    {
+	/// <summary>Callback invoked by Revit. Not used to be called in user code.</summary>
+	public bool IsCommandAvailable(UIApplication applicationData, CategorySet selectedCategories)
+	{
 #if NETCOREAPP
         if (_isolatedInstance is not null)
         {
@@ -48,7 +53,7 @@ public abstract class ExternalCommandAvailability : IExternalCommandAvailability
 
         return SetCommandAvailability(applicationData, selectedCategories);
 #else
-        return SetCommandAvailability(applicationData, selectedCategories);
+		return SetCommandAvailability(applicationData, selectedCategories);
 #endif
-    }
+	}
 }
